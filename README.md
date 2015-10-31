@@ -47,7 +47,7 @@ for loading pages add "locale(Locale.getDefault()) to the BrowserBuilder call:
  public static void main(String... args) throws Exception {
         BrowserBuilder.newBrowser().
                 loadPage("pages/index.html").
-                locale(Locale.getDefault()).
+                *locale(Locale.getDefault()).*
                 loadClass(Main.class).
                 invoke("onPageLoad", args).
                 showAndWait();

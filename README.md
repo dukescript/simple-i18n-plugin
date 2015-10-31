@@ -2,7 +2,7 @@
 A simple plugin for generating localized versions of html pages and templates using Freemarker
 
 To use this, build it locally, then add to your applications pom:
-{% highlight xml %}
+``` xml
 <plugin>
     <groupId>com.dukescript</groupId>
     <artifactId>simple-i18n-maven-plugin</artifactId>
@@ -21,7 +21,7 @@ To use this, build it locally, then add to your applications pom:
             </execution>
         </executions>
 </plugin>
-{% endhighlight %}
+```
 
 *inputDir* should point to a directory with freemarker template files. These files need to follow the name pattern:
 
@@ -42,7 +42,8 @@ If the outdir doesn't exist it's generated. There's no checking for correct loca
 
 This has been created for working with DukeScript, but might also be helpful in other project types. In DukeScript to enable i18n support 
 for loading pages add "locale(Locale.getDefault()) to the BrowserBuilder call: 
-{% highlight java %}
+
+``` java
  public static void main(String... args) throws Exception {
         BrowserBuilder.newBrowser().
                 loadPage("pages/index.html").
@@ -52,4 +53,4 @@ for loading pages add "locale(Locale.getDefault()) to the BrowserBuilder call:
                 showAndWait();
         System.exit(0);
     }
-{% endhighlight %}
+``

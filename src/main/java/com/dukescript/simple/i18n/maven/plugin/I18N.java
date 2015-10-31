@@ -50,6 +50,12 @@ public class I18N extends AbstractMojo {
             if (outfile == null) {
                 outfile = infile;
             }
+            
+            
+            if (!outfile.exists() && !outfile.mkdirs()) {
+                throw new IllegalStateException("Couldn't create dir: " + outfile);
+            }
+            
             cfg.setDirectoryForTemplateLoading(absoluteFile);
             if (absoluteFile.isDirectory()) {
                 Logger.getLogger(I18N.class.getName()).info("Looking for template data in " + absoluteFile);
